@@ -1,4 +1,5 @@
-from src.basic_summarize import summarize_text
+# from src.basic_summarize import summarize_text
+from src.hugging_face_summarize import summarize_text
 import streamlit as st
 
 # Streamlit UI
@@ -13,7 +14,7 @@ if st.button('Summarize'):
     # Check if there is text to summarize
     if input_text:
         # Use the summarize_text function
-        summary = summarize_text(input_text, 2)  # Adjust num_sentences as needed
+        summary = summarize_text(input_text, 10)  # Adjust num_sentences as needed
         # Display the summary
         st.text_area("Summary:", value=summary, height=150, max_chars=None, help=None)
     else:
